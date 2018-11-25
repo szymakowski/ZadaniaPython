@@ -1,0 +1,36 @@
+import math
+
+class Complex(object):
+
+    def __init__(self, re=0, im=0):
+        self.re = re
+        self.im = im
+
+    def addNumber(self, number):
+        return Complex(self.re + number, self.im)
+
+    def __add__(self, other):
+        return Complex(self.re + other.re, self.im + other.im)
+
+    def __sub__(self, other):
+        return Complex(self.re - other.re, self.im - other.im)
+
+    def __abs__(self):
+        abs = self.re * self.re + self.im * self.im
+        return math.sqrt(abs)
+
+    def __str__(self):
+        if self.im >= 0:
+            return str(self.re) + "+" + str(self.im) + "i"
+        else:
+            return str(self.re) + "" + str(self.im) + "i"
+
+
+x = Complex(2,5)
+y = Complex(3,-6)
+
+print("x= ", x)
+print("y= ", y)
+print("x + y = ",(x + y))
+print("x - y = ",(x-y))
+print(abs(x))
