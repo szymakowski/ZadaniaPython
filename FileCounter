@@ -1,0 +1,9 @@
+import os
+
+fileCounter=0
+directory = os.scandir("/dev")
+
+for x in directory:
+    if x.is_file():
+        fileCounter += 1
+print(fileCounter)
