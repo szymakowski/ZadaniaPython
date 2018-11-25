@@ -1,0 +1,44 @@
+import random
+
+matrixSize = 8
+matrix1=[[0 for x in range(matrixSize)] for y in range(matrixSize)]
+
+def randomMatrix(matrix):
+    for i in range(len(matrix)):
+        for j in range(len(matrix)):
+            matrix[i][j] = random.randint(0,10)
+
+randomMatrix(matrix1)
+
+print(matrix1)
+
+def det(matrix):
+    if len(matrix) == len(matrix[0]):
+        if len(matrix) == 1:
+            return matrix[0][0]
+        elif len(matrix) == 2:
+            return (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0])
+        if (len(matrix) > 2):
+            i=1
+            temp=0
+            sum=0
+            while temp <= len(matrix)-1:
+                d={}
+                temp1 = 1
+                while temp1 <= len(matrix)-1:
+                    m = 0
+                    d[temp1] = []
+                    while m <= len(matrix)-1:
+                        if (m == temp):
+                            u = 0
+                        else:
+                            d[temp1].append(matrix[temp1][m])
+                        m += 1
+                    temp1 += 1
+                l1=[d[x] for x in d]
+                sum = sum+i*(matrix[0][temp])*(det(l1))
+                i = i*(-1)
+                temp += 1
+            return sum
+
+print("wyznacznik = ",det(matrix1))
