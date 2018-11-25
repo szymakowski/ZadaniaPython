@@ -1,0 +1,28 @@
+import random
+
+matrixSize = 128
+matrix1=[[0 for x in range(matrixSize)] for y in range(matrixSize)]
+matrix2=[[0 for x in range(matrixSize)] for y in range(matrixSize)]
+matrixSum=[[0 for x in range(matrixSize)] for y in range(matrixSize)]
+
+def randomMatrix(matrix):
+    for i in range(len(matrix)):
+        for j in range(len(matrix)):
+            matrix[i][j] = random.randint(0,100)
+
+randomMatrix(matrix1)
+randomMatrix(matrix2)
+
+print(matrix1)
+print(matrix2)
+
+def matrixSuma(matrix1, matrix2):
+    for i in range(len(matrix1)):
+        for j in range(len(matrix1)):
+            matrixSum[i][j] = matrix1[i][j] + matrix2[i][j]
+
+matrixSuma(matrix1, matrix2)
+if len(matrix1) == len(matrix2):
+    print(matrixSum)
+else:
+    print("Wrong Matrix dimension values")
