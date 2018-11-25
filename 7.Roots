@@ -1,0 +1,25 @@
+import math
+from math import sqrt
+
+a = int(input("wprowadz wartosc a: "))
+b = int(input("wprowadz wartosc b: "))
+c = int(input("wprowadz wartosc c: "))
+
+a=int(a)
+
+if a == b == c == 0:
+    print ("brak rownan")
+else:
+    if a == 0:
+        x = (-c/b)
+        print("x=", x)
+    elif a != 0:
+        delta = (b*b)-(4*a*c)
+        if delta < 0:
+            print("brak pierwiastkow")
+        elif delta == 0:
+            x = (b*b/4*a)
+        elif delta > 0:
+            x1 = (b*b-sqrt(delta)/4*a)
+            x2 = (b*b+sqrt(delta)/4*a)
+            print ("x1=%d , x2=%d" % (x1,x2))
