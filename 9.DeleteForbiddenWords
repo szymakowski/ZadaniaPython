@@ -1,0 +1,12 @@
+forbidden_words = [" się", " i", " oraz", " nigdy", " dlaczego", " Się", " I", " Oraz", " Nigdy", " Dlaczego"]
+
+file = open("example.txt", 'r')
+file2 = open("resultFile.txt", 'w+')
+
+for line in file:
+    for word in forbidden_words:
+        line = line.replace(word, "")
+    file2.write(line)
+
+file.close()
+file2.close()
