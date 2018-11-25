@@ -1,0 +1,18 @@
+import random
+
+data = []
+
+for x in range(0,50):
+    number = random.randint(0,1000)
+    data.append(number)
+print(data)
+
+def sort(list):
+    for i in range(len(list)-1,0,-1):
+        for a in range(i):
+            if list[a] < list[a+1]:
+                temp = list[a]
+                list[a] = list[a+1]
+                list[a+1] = temp
+sort(data)
+print(data)
