@@ -1,0 +1,14 @@
+text = "data123"
+file = open('C:/Users/User/PycharmProjects/untitled/venv/example.txt', 'w+')
+
+try:
+    file.write(text)
+finally:
+    file.close()
+
+file = open('C:/Users/User/PycharmProjects/untitled/venv/example.txt', 'r')
+
+try:
+    text_2 = file.read()
+finally:
+    file.close()
