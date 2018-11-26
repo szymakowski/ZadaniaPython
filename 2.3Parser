@@ -1,0 +1,19 @@
+from xml.dom.minidom import parse
+import xml.dom.minidom
+
+DOM = xml.dom.minidom
+
+document = DOM.parse(open("C:/Users/User/PycharmProjects/untitled/venv/exampleFile.xml"))
+content = document.getElementsByTagName('food')
+collection = document.documentElement
+
+print("-------------- Breakfast MENU ----------------")
+for data in content:
+    name = data.getElementsByTagName('name')[0].childNodes[0].data
+    price = data.getElementsByTagName('price')[0].childNodes[0].data
+    description = data.getElementsByTagName('description')[0].childNodes[0].data
+    calories = data.getElementsByTagName('calories')[0].childNodes[0].data
+    print("name: {} \nprice {} \ndescription {} \ncalories {}".format(name, price, description, calories))
+DOM.getElementsByTagName('price')[0].firstChild.replaceWholeText("cena")
+
+document.close()
